@@ -2445,11 +2445,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\back-wachify\\back-wachify\\back-wachify.csproj",
+      "projectUniqueName": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
       "projectName": "back-wachify",
-      "projectPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\back-wachify\\back-wachify\\back-wachify.csproj",
+      "projectPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
       "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\back-wachify\\back-wachify\\obj\\",
+      "outputPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gotg0/QR9C8pingBUVoMNFvh7vavTbaE4EvdhbsGn9n+Kyl/p7F1fPEgiCNl0EDLsYtcxttiDJNFFDQjsrbkHA==",
+  "dgSpecHash": "a0GE7a7HlYCY/0VTpcE17C8x8VbwH+si1dEG6E/1V7T+Fn1V/COH/q7x5B7VhQz46hU/dCqU/06R4z6zhMpcIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\back-wachify\\back-wachify\\back-wachify.csproj",
+  "projectFilePath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmed\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

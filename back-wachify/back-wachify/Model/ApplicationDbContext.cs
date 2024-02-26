@@ -9,6 +9,9 @@ namespace back_wachify.Model
 		}
 
 		public DbSet<Utilisateur> utilisateurs { get; set; }
+		public DbSet<Film> Film { get; set; }
+
+
 
 	}
 }
