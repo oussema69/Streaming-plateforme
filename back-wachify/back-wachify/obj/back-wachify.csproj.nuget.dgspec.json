@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Desktop\\watchify\\Streaming_Plateforme\\back-wachify\\back-wachify\\back-wachify.csproj": {}
+    "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Desktop\\watchify\\Streaming_Plateforme\\back-wachify\\back-wachify\\back-wachify.csproj": {
+    "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Desktop\\watchify\\Streaming_Plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
+        "projectUniqueName": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
         "projectName": "back-wachify",
-        "projectPath": "C:\\Users\\dell\\Desktop\\watchify\\Streaming_Plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Desktop\\watchify\\Streaming_Plateforme\\back-wachify\\back-wachify\\obj\\",
+        "projectPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
+        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,10 +60,6 @@
               "target": "Package",
               "version": "[6.0.25, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration": {
-              "target": "Package",
-              "version": "[6.0.15, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -88,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

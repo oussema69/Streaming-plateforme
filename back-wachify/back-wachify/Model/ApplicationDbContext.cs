@@ -8,6 +8,12 @@ namespace back_wachify.Model
 		{
 		}
 
+<<<<<<< HEAD
+		public DbSet<Utilisateur> utilisateurs { get; set; }
+		public DbSet<Film> Film { get; set; }
+
+
+=======
 		public DbSet<User> User { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,6 +23,7 @@ namespace back_wachify.Model
             .HasIndex(u => u.Username)
             .IsUnique();
         }
+>>>>>>> b0fdc48332585a6f24d360368ddb8dd09fcbb147
 
 
     }

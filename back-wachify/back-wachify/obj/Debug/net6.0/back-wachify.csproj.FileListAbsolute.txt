@@ -66,6 +66,76 @@ C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\back-wachi
 C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.pdb
 C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.genruntimeconfig.cache
 C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\back-wachify\back-wachify\obj\Debug\net6.0\ref\back-wachify.dll
+<<<<<<< HEAD
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\appsettings.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\back-wachify.exe
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\back-wachify.deps.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\back-wachify.runtimeconfig.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\back-wachify.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\back-wachify.pdb
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Humanizer.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.csproj.AssemblyReference.cache
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.AssemblyInfoInputs.cache
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.AssemblyInfo.cs
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets\msbuild.back-wachify.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets\msbuild.build.back-wachify.props
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.back-wachify.props
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.back-wachify.props
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\scopedcss\bundle\back-wachify.styles.css
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.csproj.CopyComplete
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\refint\back-wachify.dll
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.pdb
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.genruntimeconfig.cache
+C:\Users\ahmed\OneDrive\Bureau\DWMM\SEMESTER2\Projet Integration\code\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\ref\back-wachify.dll
+=======
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.dll
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\obj\Debug\net6.0\refint\back-wachify.dll
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.pdb
@@ -314,3 +384,4 @@ C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\bi
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\dell\Desktop\watchify\Streaming_Plateforme\back-wachify\back-wachify\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+>>>>>>> b0fdc48332585a6f24d360368ddb8dd09fcbb147
