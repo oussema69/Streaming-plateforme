@@ -22,7 +22,6 @@ namespace back_wachify.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-<<<<<<< HEAD
             modelBuilder.Entity("back_wachify.Model.Film", b =>
                 {
                     b.Property<int>("Id")
@@ -49,9 +48,7 @@ namespace back_wachify.Migrations
                 });
 
             modelBuilder.Entity("back_wachify.Model.Utilisateur", b =>
-=======
             modelBuilder.Entity("back_wachify.Model.User", b =>
->>>>>>> b0fdc48332585a6f24d360368ddb8dd09fcbb147
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +87,7 @@ namespace back_wachify.Migrations
                         .IsUnique();
 
                     b.ToTable("User");
-                });
+                }));
 #pragma warning restore 612, 618
         }
     }
