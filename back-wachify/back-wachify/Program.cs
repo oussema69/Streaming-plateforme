@@ -1,5 +1,5 @@
+global using back_wachify.Services.UserService;
 using back_wachify.Model;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -19,9 +19,13 @@ namespace back_wachify
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
-			builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddHttpContextAccessor();
+
+
+            builder.Services.AddSwaggerGen();
 			builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-	
+
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
