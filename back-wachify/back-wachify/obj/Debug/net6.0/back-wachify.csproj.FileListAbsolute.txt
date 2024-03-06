@@ -245,3 +245,9 @@ C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify
 C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.pdb
 C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\back-wachify.genruntimeconfig.cache
 C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\obj\Debug\net6.0\ref\back-wachify.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Scrutor.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\alich\Desktop\streaminig\Streaming-plateforme\back-wachify\back-wachify\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
