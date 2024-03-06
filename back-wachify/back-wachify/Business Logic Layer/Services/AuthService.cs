@@ -8,6 +8,7 @@ using back_wachify.Model;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -129,7 +130,10 @@ namespace back_wachify.Business_Logic_Layer.Services
                 ConfirmationCode = GenerateRandomCode(),
                 IsEmailConfirmed = false,
 
+
         };
+
+            
 
             try
             {
@@ -193,12 +197,13 @@ namespace back_wachify.Business_Logic_Layer.Services
             return (token, null); // Token refreshed successfully
         }
 
-
+     
         public string GenerateRandomCode()
         {
             Random random = new Random();
             int code = random.Next(00000, 99999); // Génère un nombre aléatoire entre 10000 et 99999
 
+     
 
             return code.ToString();
         }
