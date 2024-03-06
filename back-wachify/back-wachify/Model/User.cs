@@ -28,6 +28,9 @@ namespace back_wachify.Model
         public DateTime TokenCreated { get; set; }
 
         public DateTime TokenExpires { get; set; }
+        public bool IsEmailConfirmed { get; set; }
+        [MaxLength(5)]
+        public string ConfirmationCode { get; set; }
         public Role Role { get; set; }
 
     }

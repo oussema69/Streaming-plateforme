@@ -21,6 +21,8 @@ namespace back_wachify.Controllers
         private readonly ApplicationDbContext _dbContext; 
 
 
+
+
         public AuthController(IConfiguration configuration, IUserService userService, ApplicationDbContext dbContext)
         {
             _configuration = configuration;
@@ -50,7 +52,8 @@ namespace back_wachify.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
             user.Role = request.Role;
-
+            user.ConfirmationCode = _userService.GenerateRandomCode();
+            user.IsEmailConfirmed = false;
             try
             {
                 // Add the user entity to the DbContext
@@ -83,6 +86,11 @@ namespace back_wachify.Controllers
                 }
             }
 
+        }
+
+        private string GenerateRandomCode()
+        {
+            throw new NotImplementedException();
         }
 
         [HttpPost("login")]

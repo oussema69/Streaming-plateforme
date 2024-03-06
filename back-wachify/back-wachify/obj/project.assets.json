@@ -10651,19 +10651,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
+    "C:\\Users\\alich\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
+      "projectUniqueName": "C:\\Users\\alich\\Desktop\\streaminig\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
       "projectName": "back-wachify",
-      "projectPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
-      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmed\\OneDrive\\Bureau\\DWMM\\SEMESTER2\\Projet Integration\\code\\Streaming-plateforme\\back-wachify\\back-wachify\\obj\\",
+      "projectPath": "C:\\Users\\alich\\Desktop\\streaminig\\Streaming-plateforme\\back-wachify\\back-wachify\\back-wachify.csproj",
+      "packagesPath": "C:\\Users\\alich\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alich\\Desktop\\streaminig\\Streaming-plateforme\\back-wachify\\back-wachify\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alich\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

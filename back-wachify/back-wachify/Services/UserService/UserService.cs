@@ -19,5 +19,14 @@ namespace back_wachify.Services.UserService
             }
             return result;
         }
+        public string GenerateRandomCode()
+        {
+            Random random = new Random();
+            int code = random.Next(00000, 99999); // Génère un nombre aléatoire entre 10000 et 99999
+
+            return code.ToString();
+        }
+
     }
+
 }
