@@ -14,5 +14,7 @@ namespace back_wachify.Business_Logic_Layer.Interfaces
         Task<User> RegisterUser(UserDto request);
         Task<(string Token, bool IsPasswordWrong)> login(AuthDto request);
         Task<(string Token, string Message)> RefreshToken(string refreshToken);
+        string GenerateRandomCode();
+
     }
 }
