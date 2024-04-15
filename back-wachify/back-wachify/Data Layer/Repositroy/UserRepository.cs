@@ -46,6 +46,11 @@ namespace back_wachify.Data_Layer.Repositroy
             return await _dbContext.User.FirstOrDefaultAsync(u => u.Username == username);
 
         }
+        public async Task<User> FindById(string id)
+        {
+            return await _dbContext.User.FirstOrDefaultAsync(u => u.Id.ToString() == id);
+
+        }
 
         public async Task<User> GetUserByRefreshTokenAsync(string refreshToken)
         {

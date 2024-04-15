@@ -11,6 +11,9 @@ namespace back_wachify.Data_Layer.Repositroy
         Task<User> add(User userDto);
         Task<User> FindByUsername(string username);
         Task<User> GetUserByRefreshTokenAsync(string refreshToken);
+        Task<User> FindById(string id);
+
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using back_wachify.Data.Model;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -34,6 +35,8 @@ namespace back_wachify.Model
         public string ConfirmationCode { get; set; }
 
         public Role Role { get; set; }
+
+
 
     }
 }

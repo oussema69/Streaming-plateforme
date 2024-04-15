@@ -22,6 +22,52 @@ namespace back_wachify.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Abonnement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateAbonnement")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Abonnements");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AbonnementId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Durations")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AbonnementId");
+
+                    b.ToTable("Pack");
+                });
+
             modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
                 {
                     b.Property<int>("Id")
@@ -48,8 +94,6 @@ namespace back_wachify.Migrations
                 });
 
             modelBuilder.Entity("back_wachify.Model.User", b =>
-
-            modelBuilder.Entity("back_wachify.Data.Model.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,6 +140,18 @@ namespace back_wachify.Migrations
                         .IsUnique();
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
+                {
+                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Abonnement", null)
+                        .WithMany("Packs")
+                        .HasForeignKey("AbonnementId");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Abonnement", b =>
+                {
+                    b.Navigation("Packs");
                 });
 #pragma warning restore 612, 618
         }
