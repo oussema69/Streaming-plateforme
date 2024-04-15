@@ -1,4 +1,6 @@
-﻿using back_wachify.Data.Model;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Data.Model;
+using back_wachify.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace back_wachify.Data
@@ -10,6 +12,11 @@ namespace back_wachify.Data
         }
 
         public DbSet<Film> Film { get; set; }
+
+        public DbSet<Pack> Pack { get; set; }
+        public DbSet<Abonnement> Abonnements { get; set; }
+
+
 
 
 

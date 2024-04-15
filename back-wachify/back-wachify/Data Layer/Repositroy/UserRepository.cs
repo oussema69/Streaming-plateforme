@@ -2,6 +2,7 @@
 using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
+using back_wachify.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +44,11 @@ namespace back_wachify.Data_Layer.Repositroy
         public async Task<User> FindByUsername(string username)
         {
             return await _dbContext.User.FirstOrDefaultAsync(u => u.Username == username);
+
+        }
+        public async Task<User> FindById(string id)
+        {
+            return await _dbContext.User.FirstOrDefaultAsync(u => u.Id.ToString() == id);
 
         }
 

@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Data.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace back_wachify.Data.Model
+namespace back_wachify.Model
 {
 
     public class User
@@ -31,8 +33,10 @@ namespace back_wachify.Data.Model
         public bool IsEmailConfirmed { get; set; }
         [MaxLength(5)]
         public string ConfirmationCode { get; set; }
-       
+
         public Role Role { get; set; }
+
+
 
     }
 }

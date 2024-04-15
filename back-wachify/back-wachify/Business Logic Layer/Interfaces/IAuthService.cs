@@ -1,6 +1,7 @@
 ﻿using back_wachify.Business_Logic_Layer.Dto;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
+using back_wachify.Model;
 
 namespace back_wachify.Business_Logic_Layer.Interfaces
 {

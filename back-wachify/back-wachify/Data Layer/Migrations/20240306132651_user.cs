@@ -4,11 +4,11 @@
 
 namespace back_wachify.Migrations
 {
-    public partial class confirlmation : Migration
+    public partial class user : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-      
+            
 
             migrationBuilder.AddColumn<string>(
                 name: "ConfirmationCode",

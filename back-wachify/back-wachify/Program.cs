@@ -1,4 +1,4 @@
-global using back_wachify.Services.UserService;
+﻿global using back_wachify.Services.UserService;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,21 +16,30 @@ using back_wachify.Data_Layer.Repositroy;
 namespace back_wachify
 {
     public class Program
-	{
+    {
 
-		
-		public static void Main(string[] args)
-		{
-			var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-			builder.Services.AddControllers();
-			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-			builder.Services.AddEndpointsApiExplorer();
+            // Add services to the container.
+
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IPackService, PackService>();
+            builder.Services.AddScoped<IAbonnementService, AbonnementService>();
+            builder.Services.AddScoped<IPackRepo, PackRepo>();
+            builder.Services.AddScoped<IAbonnementRepo, AbonnementRepo>();
+
+
+
+
+
 
 
             builder.Services.AddHttpContextAccessor();
@@ -79,21 +88,21 @@ namespace back_wachify
 
             var app = builder.Build();
 
-			// Configure the HTTP request pipeline.
-			if (app.Environment.IsDevelopment())
-			{
-				app.UseSwagger();
-				app.UseSwaggerUI();
-			}
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
-			app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
-			app.UseAuthorization();
+            app.UseAuthorization();
 
 
-			app.MapControllers();
+            app.MapControllers();
 
-			app.Run();
-		}
-	}
+            app.Run();
+        }
+    }
 }

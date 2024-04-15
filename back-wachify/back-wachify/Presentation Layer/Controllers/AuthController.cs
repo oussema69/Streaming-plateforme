@@ -3,6 +3,7 @@ using back_wachify.Business_Logic_Layer.Interfaces;
 using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
+using back_wachify.Model;
 using back_wachify.Services.UserService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

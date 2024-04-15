@@ -4,6 +4,7 @@ using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Data_Layer.Repositroy;
 using back_wachify.Dto;
+using back_wachify.Model;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -128,7 +129,11 @@ namespace back_wachify.Business_Logic_Layer.Services
                 Role = request.Role,
                 ConfirmationCode = GenerateRandomCode(),
                 IsEmailConfirmed = false,
-            };
+
+
+        };
+
+            
 
             try
             {
@@ -198,10 +203,10 @@ namespace back_wachify.Business_Logic_Layer.Services
             Random random = new Random();
             int code = random.Next(00000, 99999); // Génère un nombre aléatoire entre 10000 et 99999
 
+     
 
             return code.ToString();
         }
-
 
 
 

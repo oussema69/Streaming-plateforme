@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240306193703_confirlmation")]
-    partial class confirlmation
+    [Migration("20240306132651_user")]
+    partial class user
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace back_wachify.Migrations
                     b.ToTable("Film");
                 });
 
-            modelBuilder.Entity("back_wachify.Data.Model.User", b =>
+            modelBuilder.Entity("back_wachify.Model.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
