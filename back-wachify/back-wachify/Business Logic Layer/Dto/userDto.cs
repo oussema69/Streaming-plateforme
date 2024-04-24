@@ -1,4 +1,5 @@
-﻿using back_wachify.Data.Model;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Data.Model;
 using System.ComponentModel.DataAnnotations;
 
 namespace back_wachify.Dto
@@ -20,6 +21,8 @@ namespace back_wachify.Dto
         public string Password { get; set; } = string.Empty;
         [Required(ErrorMessage = "Role is required")]
         public Role Role { get; set; }
+        public Etat Etat { get; set; }
+
 
     }
 }
