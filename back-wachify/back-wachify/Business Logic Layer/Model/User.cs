@@ -38,7 +38,12 @@ namespace back_wachify.Model
         [MaxLength(5)]
         public string ConfirmationCode { get; set; }
 
+        public int secretCode { get; set; }
+
         public Role Role { get; set; }
+
+        public Etat Etat { get; set; }
+
 
 
 

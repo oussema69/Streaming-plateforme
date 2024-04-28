@@ -43,7 +43,6 @@ namespace back_wachify
 
 
 
-
             builder.Services.AddHttpContextAccessor();
 
 
@@ -111,6 +110,14 @@ namespace back_wachify
             var app = builder.Build();
             app.UseCors(MyAllowSpecificOrigins);
 
+
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            });
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

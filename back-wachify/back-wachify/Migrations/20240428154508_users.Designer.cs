@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240416155550_abn")]
-    partial class abn
+    [Migration("20240428154508_users")]
+    partial class users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -113,16 +113,26 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
                         .IsRequired()
@@ -140,6 +150,18 @@ namespace back_wachify.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("facebookId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("googleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

@@ -12,7 +12,7 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240306132651_user")]
+    [Migration("20240428154837_user")]
     partial class user
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,57 @@ namespace back_wachify.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Abonnement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateAbonnement")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PackId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PackId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Abonnements");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Durations")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pack");
+                });
 
             modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
                 {
@@ -62,16 +113,26 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
                         .IsRequired()
@@ -90,12 +151,43 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("facebookId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("googleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Username")
                         .IsUnique();
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Abonnement", b =>
+                {
+                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Pack", "Pack")
+                        .WithMany()
+                        .HasForeignKey("PackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("back_wachify.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pack");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

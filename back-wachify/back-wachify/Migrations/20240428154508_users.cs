@@ -4,7 +4,7 @@
 
 namespace back_wachify.Migrations
 {
-    public partial class ModelFilm : Migration
+    public partial class users : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -4,7 +4,7 @@
 
 namespace back_wachify.Migrations
 {
-    public partial class m : Migration
+    public partial class userm : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

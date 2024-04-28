@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240423220737_social")]
-    partial class social
+    [Migration("20240428155011_userm")]
+    partial class userm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -113,6 +113,9 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
 
@@ -125,7 +128,6 @@ namespace back_wachify.Migrations
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -157,6 +159,9 @@ namespace back_wachify.Migrations
 
                     b.Property<string>("provider")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

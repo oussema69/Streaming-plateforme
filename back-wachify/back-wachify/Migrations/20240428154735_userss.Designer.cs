@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240327011725_PackCrud")]
-    partial class PackCrud
+    [Migration("20240428154735_userss")]
+    partial class userss
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,17 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PackId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PackId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Abonnements");
                 });
@@ -52,9 +62,6 @@ namespace back_wachify.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AbonnementId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Durations")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -64,8 +71,6 @@ namespace back_wachify.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AbonnementId");
 
                     b.ToTable("Pack");
                 });
@@ -108,16 +113,26 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
                         .IsRequired()
@@ -136,6 +151,18 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("facebookId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("googleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Username")
@@ -144,16 +171,23 @@ namespace back_wachify.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
-                {
-                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Abonnement", null)
-                        .WithMany("Packs")
-                        .HasForeignKey("AbonnementId");
-                });
-
             modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Abonnement", b =>
                 {
-                    b.Navigation("Packs");
+                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Pack", "Pack")
+                        .WithMany()
+                        .HasForeignKey("PackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("back_wachify.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pack");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

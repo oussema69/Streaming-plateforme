@@ -13,9 +13,21 @@ namespace back_wachify.Data_Layer.Repositroy
         Task<User> GetUserByRefreshTokenAsync(string refreshToken);
         Task<User> FindById(string id);
 
-        public Task<IEnumerable<User>> Get();
-        public Task Update( User entity);
-        public Task Delete(User user);
+
+        Task<List<User>> GetAllAsync();
+        Task<List<User>> GetByRoleAsync(Role role);
+        Task<User> GetByIdAsync(int id);
+        Task<bool> DeactivateAsync(int id);
+        Task<User> UpdateAsync(int id, UserDto userDto);
+       /* Task<bool> SendEmailAsync(emailDto emailDto);
+        Task<bool> VerifyCodeAsync(int codeVerification, string email);*/
+        Task<bool> AffecterCode(string username,int code);
+
+        Task<int?> GetSecretCodeByEmailAsync(string email);
+
+
+
+
 
     }
 }
