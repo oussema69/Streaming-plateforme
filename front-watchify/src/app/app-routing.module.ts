@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'customer', loadChildren: () => import('./modules/home-customer/home-customer.module').then(m => m.HomeCustomerModule) },
   { path: 'admin', loadChildren: () => import('./modules/home-admin/home-admin.module').then(m => m.HomeAdminModule) },
   { path: 'partner', loadChildren: () => import('./modules/home-partner/home-partner.module').then(m => m.HomePartnerModule) },
+  { path: 'signin', loadChildren: () => import('./modules/accounts/accounts.module').then(m => m.AccountsModule) },
 
 ];
 

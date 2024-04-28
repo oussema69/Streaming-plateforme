@@ -1,7 +1,0 @@
-{
-  "name": "watchify",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "custom"
-}

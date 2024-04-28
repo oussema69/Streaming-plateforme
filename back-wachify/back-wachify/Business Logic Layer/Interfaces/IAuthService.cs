@@ -13,9 +13,11 @@ namespace back_wachify.Business_Logic_Layer.Interfaces
         void SetRefreshToken(User user, RefreshToken newRefreshToken);
         RefreshToken GenerateRefreshToken(User user);
         Task<User> RegisterUser(UserDto request);
-        Task<(string Token, bool IsPasswordWrong)> login(AuthDto request);
+        Task<(string Token, bool IsPasswordWrong, Role role)> login(AuthDto request);
         Task<(string Token, string Message)> RefreshToken(string refreshToken);
         string GenerateRandomCode();
+        Task<(string Token, bool IsSocialNotLogged)> loginSocial(SocialAuthDto request);
+        Task<User> RegisterUserSocial(SocialregisterDto request);
 
     }
 }

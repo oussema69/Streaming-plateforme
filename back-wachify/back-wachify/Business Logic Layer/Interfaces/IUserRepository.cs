@@ -13,7 +13,9 @@ namespace back_wachify.Data_Layer.Repositroy
         Task<User> GetUserByRefreshTokenAsync(string refreshToken);
         Task<User> FindById(string id);
 
-
+        public Task<IEnumerable<User>> Get();
+        public Task Update( User entity);
+        public Task Delete(User user);
 
     }
 }

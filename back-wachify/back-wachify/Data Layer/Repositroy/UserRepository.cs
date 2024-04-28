@@ -2,10 +2,12 @@
 using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
+using back_wachify.Migrations;
 using back_wachify.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace back_wachify.Data_Layer.Repositroy
 {
@@ -52,9 +54,35 @@ namespace back_wachify.Data_Layer.Repositroy
 
         }
 
+
         public async Task<User> GetUserByRefreshTokenAsync(string refreshToken)
         {
             return await _dbContext.User.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+        }
+
+        public async Task<IEnumerable<User>> Get()
+        {
+            var users = await _dbContext.User.ToListAsync();
+
+            return users;
+        }
+
+        public async Task Update(User entity)
+        {
+           
+              
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
+
+
+        }
+
+        public async Task Delete(User user)
+        {
+            
+                _dbContext.User.Remove(user);
+                await _dbContext.SaveChangesAsync();
+            
         }
     }
 }

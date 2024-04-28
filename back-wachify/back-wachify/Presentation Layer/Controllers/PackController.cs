@@ -17,7 +17,7 @@ namespace back_wachify.Presentation_Layer.Controllers
         {
             _packService = packService;
         }
-        [Authorize]
+      
         [HttpGet]
         public async Task<IActionResult> GetAllPacks()
         {

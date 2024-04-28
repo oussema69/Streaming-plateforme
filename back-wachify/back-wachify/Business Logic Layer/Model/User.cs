@@ -21,9 +21,13 @@ namespace back_wachify.Model
         [Required(ErrorMessage = "Password is required")]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
            ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character, and have a minimum length of 8")]
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
+        public byte[]? PasswordHash { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string? facebookId { get; set; }
+        public string? googleId { get; set; }
+        public string? provider { get; set; }
+        public byte[]? PasswordSalt { get; set; }
 
         public string RefreshToken { get; set; } = string.Empty;
 
