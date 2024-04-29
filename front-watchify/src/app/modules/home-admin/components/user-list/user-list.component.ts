@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/User';
 import { AdminService } from 'src/app/Services/admin.service';
-import { EditUserComponent } from '../edit-user/edit-user.component';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-
-
 
 @Component({
   selector: 'app-user-list',
@@ -14,9 +10,8 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 })
 export class UserListComponent {
   allUsers:User[]=[];
-  modalRef: MdbModalRef<EditUserComponent> | null = null;
 
-  constructor(private adminserv:AdminService,private router: Router,private modalService: MdbModalServic){}
+  constructor(private adminserv:AdminService,private router: Router){}
 
 
 
@@ -26,9 +21,7 @@ export class UserListComponent {
 
  
   
-  openModal() {
-    this.modalRef = this.modalService.open(ModalComponent)
-  }
+
   ngOnInit(){
     console.log("la liste est ",this.getAll());
   }
