@@ -70,7 +70,8 @@
     border-radius: 50%;
   }
   .container{
-    margin-top: 10px;
+    
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
   }
@@ -78,6 +79,7 @@
   /* Side menubar section */
   nav{
     background: #fff;
+    height: 80vh;
   }
   .side_navbar{
     padding: 1px;
@@ -97,7 +99,7 @@
     color: rgb(100, 100, 100);
   }
   .links{
-    margin-top: 5rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
   }
@@ -136,7 +138,7 @@
   .history_lists{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
   }
   .row{
     display: flex;

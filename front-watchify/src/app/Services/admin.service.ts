@@ -45,6 +45,20 @@ export class AdminService {
       );
   }
 
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(this.url + `delete/${id}`)
+  }
+
+
+  getUserById(id: number): Observable<any> {
+    return this.http.get<any>(this.url + `getById/${id}`)
+      .pipe(
+        catchError(error => {
+          console.error('Erreur lors de la récupération de l\'utilisateur par ID:', error);
+          return throwError(error);
+        })
+      );
+  }
 }
 
 
