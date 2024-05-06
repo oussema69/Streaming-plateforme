@@ -113,6 +113,35 @@ namespace back_wachify.Presentation_Layer.Controllers
             }
         }
 
+
+
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            try
+            {
+                var result = await _userService.DeleteUser(id);
+                if (result)
+                {
+                    return Ok(new { message = "Utilisateur supprimé avec succès" });
+                }
+                else
+                {
+                    return NotFound(new { message = "Utilisateur non trouvé" });
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and handle it appropriately
+                Console.WriteLine($"Exception: {ex}");
+                return StatusCode(500, new { message = "Une erreur s'est produite lors de la suppression de l'utilisateur." });
+            }
+        }
+
+
+
+
         [HttpPost("envoyerEmail")]
         public async Task<IActionResult> EnvoyerEmail([FromBody] emailDto emailDto)
         {

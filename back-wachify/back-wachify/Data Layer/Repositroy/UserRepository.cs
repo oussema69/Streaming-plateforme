@@ -81,7 +81,10 @@ namespace back_wachify.Data_Layer.Repositroy
 
             if (user != null)
             {
-                user.Etat = Etat.Inactive;
+                if (user.Etat == Etat.Active) {
+                    user.Etat = Etat.Inactive; }
+                else { user.Etat = Etat.Active; }
+
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
@@ -103,7 +106,24 @@ namespace back_wachify.Data_Layer.Repositroy
             return user;
         }
 
-       
+
+
+        public async Task<bool> DeleteUser(int id)
+        {
+            var user = await _dbContext.User.FindAsync(id);
+
+            if (user != null)
+            {
+                _dbContext.User.Remove(user);
+                await _dbContext.SaveChangesAsync();
+                return true; // Suppression réussie
+            }
+
+            return false; // Utilisateur non trouvé ou déjà supprimé
+        }
+
+
+
 
         public async Task<bool> AffecterCode(string username, int code)
         {

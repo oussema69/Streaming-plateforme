@@ -107,6 +107,19 @@ namespace back_wachify.Services.UserService
         }
 
 
+        public async Task<bool> DeleteUser(int id)
+        {
+            try
+            {
+                return await _userRepository.DeleteUser(id);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and handle it appropriately
+                Console.WriteLine($"Exception: {ex}");
+                throw; // Re-throw the exception to be caught in the calling method
+            }
+        }
 
 
 

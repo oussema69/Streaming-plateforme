@@ -15,6 +15,7 @@ namespace back_wachify.Services.UserService
         Task<bool> DeactivateUserAsync(int id);
         Task SendEmailAsync(emailDto emailDto, string recipient);
         Task<bool> VerifierCodeAsync(int codeVerification, string email);
+        Task<bool> DeleteUser(int id); 
 
     }
 }

@@ -1,25 +1,46 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { User } from 'src/app/Models/User';
 import { AdminService } from 'src/app/Services/admin.service';
+
+import { EditUserComponent } from '../edit-user/edit-user.component';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+  
 })
 export class UserListComponent {
   allUsers:User[]=[];
-
-  constructor(private adminserv:AdminService,private router: Router){}
-
+  modalRef: MdbModalRef<EditUserComponent> | null = null;
 
 
-  updateUser1(userId: number) {
-    this.router.navigate(['/edit-user', userId]);
-  }
 
- 
+  constructor(
+    private adminserv:AdminService ,
+    // private modalService: MdbModalService
+
+       ){}
+       
+      
+
+      //   openDialog() {
+      //   this.modalRef = this.modalService.open(EditUserComponent, {
+      //     // modalOptions: {
+      //     //   // Add any modal options here, such as size, backdrop, etc.
+      //     //   size: 'lg' // Example: Large size
+      //     // }
+      //   });
+      
+      //   // Subscribe to the modal close event
+      //   this.modalRef?.onClose.subscribe((result) => {
+      //     // Handle modal close event here if needed
+      //     console.log('Modal closed with result:', result);
+      //   });
+      //  }
+      
   
 
   ngOnInit(){
@@ -48,7 +69,7 @@ export class UserListComponent {
     if(confirm("Are you sure to change user state ?")) {
 
     this.adminserv.deactivateUser(userId).subscribe(
-      (res:any) => {
+      () => {
         console.log("Utilisateur désactivé avec succès");
         this.getAll();
       },

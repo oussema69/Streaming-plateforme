@@ -8,7 +8,12 @@ import { AdminService } from './Services/admin.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './modules/home-admin/components/edit-user/edit-user.component';
 import { UserListComponent } from './modules/home-admin/components/user-list/user-list.component';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +24,7 @@ import { UserListComponent } from './modules/home-admin/components/user-list/use
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+   
     
   ],
   providers: [AdminService],

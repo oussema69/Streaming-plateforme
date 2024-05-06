@@ -19,11 +19,12 @@ namespace back_wachify.Data_Layer.Repositroy
         Task<User> GetByIdAsync(int id);
         Task<bool> DeactivateAsync(int id);
         Task<User> UpdateAsync(int id, UserDto userDto);
-       /* Task<bool> SendEmailAsync(emailDto emailDto);
-        Task<bool> VerifyCodeAsync(int codeVerification, string email);*/
+       
         Task<bool> AffecterCode(string username,int code);
 
         Task<int?> GetSecretCodeByEmailAsync(string email);
+        Task<bool> DeleteUser(int id); 
+
 
 
 
