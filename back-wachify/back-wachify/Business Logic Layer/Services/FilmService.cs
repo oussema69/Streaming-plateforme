@@ -37,6 +37,17 @@ namespace back_wachify.Business_Logic_Layer.Services
 			return new ObjectResult (film);
 		}
 
+		public Task<Film> GetFilmById(int id)
+		{
+			return _filmRepos.GetFilmById(id);
+		}
+
+		public async Task<List<Film>> GetFilmidP(int iduser)
+		{
+			var film= await _filmRepos.GetFilmidP(iduser);
+			return film;
+		}
+
 		public async Task<IActionResult> GetFilmTitre(String titre)
 		{
 			var film = await _filmRepos.GetFilmByTitre(titre);
@@ -50,28 +61,24 @@ namespace back_wachify.Business_Logic_Layer.Services
 		}
 
 
-		/*public async Task<IActionResult> GetFilmbyidp(int idp) 
-		{
-			var film =await _filmRepos.GetFilmByidpart(idp);
-			if (film == null)
-			{
-				return new NotFoundResult();
-			}
 
-			return new OkObjectResult(film);
-		}*/
+
+		public async Task<string> GetLogoFilePathByUserId(int idUser)
+		{
+			return await _filmRepos.GetLogoFilePathByUserId(idUser);
+		}
+
+
+
 
 
 		public async Task<IActionResult> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] int id, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree)
 		{
-			var film = await _filmRepos.UpdateFilm(videoFile, logoFile,titre, description, AnnéeDeSortie, Durée, Genre, isfree);
+			var film = await _filmRepos.UpdateFilm(videoFile, logoFile,id,titre, description, AnnéeDeSortie, Durée, Genre, isfree);
 
 			return new OkObjectResult(film);
 		}
 
-		/*public Task<IActionResult> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] int id, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree, [FromForm] int userid)
-		{
-			throw new NotImplementedException();
-		}*/
+		
 	}
 }

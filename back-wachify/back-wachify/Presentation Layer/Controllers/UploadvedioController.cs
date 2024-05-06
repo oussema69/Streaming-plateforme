@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using back_wachify.Migrations;
 using Microsoft.AspNetCore.Authorization;
 using back_wachify.Data;
 using back_wachify.Business_Logic_Layer.Interfaces;

@@ -132,6 +132,9 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
 
@@ -159,6 +162,9 @@ namespace back_wachify.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

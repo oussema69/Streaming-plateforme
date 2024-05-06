@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { NavbarpartComponent } from './navbarpart/navbarpart.component';
 import { AddfilmComponent } from './addfilm/addfilm.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetaillFilmComponent } from './detaill-film/detaill-film.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     NavbarpartComponent,
-    AddfilmComponent
+    AddfilmComponent,
+    DetaillFilmComponent
   ],
   imports: [
     CommonModule,

@@ -12,13 +12,15 @@ namespace back_wachify.Business_Logic_Layer.Interfaces
 
 		Task<Film> GetFilmByTitre(string Titre);
 
-		//Task<Film> GetFilmByidpart(int  idp);
 
 		Task<Film> GetFilmById(int id);
+		Task<List<Film>> GetFilmidP(int iduser);
+
+		Task<string> GetLogoFilePathByUserId(int idUser);
 
 
 
-		Task<Film> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] Boolean isfree);
+		Task<Film> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] int id, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree);
 		Task DeleteFilm(int id );
 
 	}

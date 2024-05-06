@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240421112244_upgrade")]
-    partial class upgrade
+    [Migration("20240429132109_updatemigration")]
+    partial class updatemigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -134,6 +134,9 @@ namespace back_wachify.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<int>("Etat")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
 
@@ -161,6 +164,9 @@ namespace back_wachify.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("secretCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

@@ -36,7 +36,7 @@ namespace back_wachify.Data_Layer.Repositroy
 				// Create directory if it doesn't exist
 				if (!Directory.Exists(_uploadFolder))
 				{
-					Directory.CreateDirectory(_uploadFolder);
+					Directory.CreateDirectory(_uploadFolder);   
 				}
 				// Create directory if it doesn't exist logo
 				if (!Directory.Exists(_uploadLogo))
@@ -81,7 +81,7 @@ namespace back_wachify.Data_Layer.Repositroy
 				_db.Film.Add(film); // Assurez-vous que votre DbSet s'appelle Films ou ajustez selon le nom réel
 				await _db.SaveChangesAsync();
 				// You may save the file path to a database or return it as response
-				var fileUrl = Path.Combine("~", filePath);
+				//var fileUrl = Path.Combine("~", filePath);
 
 				return film;
 			}
@@ -101,11 +101,15 @@ namespace back_wachify.Data_Layer.Repositroy
 			}
 		}
 
+
+
 		public List<Film> GetAllFilm()
 		{
 			var films = _db.Film.ToList();
 			return films;
 		}
+
+
 
 		public async Task<Film> GetFilmByTitre(string name)
 		{
@@ -113,7 +117,9 @@ namespace back_wachify.Data_Layer.Repositroy
 			return film;
 		}
 
-		public async Task<Film> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] int id, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree, [FromForm] int userid)
+
+
+		public async Task<Film> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] int id, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree)
 		{
 			try
 			{
@@ -190,14 +196,26 @@ namespace back_wachify.Data_Layer.Repositroy
 
 		public async Task<Film> GetFilmById(int id)
 		{
-			var film = await _db.Film.FirstOrDefaultAsync(f => f.Id == id);
+			var film = await _db.Film.FindAsync(id);
 			return film;
 		}
 
-		public Task<Film> UpdateFilm(IFormFile videoFile, IFormFile logoFile, [FromForm] string titre, [FromForm] string description, [FromForm] DateTime AnnéeDeSortie, [FromForm] string Durée, [FromForm] string Genre, [FromForm] bool isfree)
+		
+
+		public async Task<List<Film>> GetFilmidP(int iduser)
 		{
-			throw new NotImplementedException();
+			var film = await _db.Film.Where(f => f.UserId == iduser).ToListAsync();
+			
+			return film;
 		}
+
+		public async Task<string> GetLogoFilePathByUserId(int idUser)
+		{
+			var film = await _db.Film.FirstOrDefaultAsync(f => f.UserId == idUser);
+			return film != null ? film.LogoFilePath : null;
+		}
+
+
 
 		/*public async Task<Film> GetFilmByidpart(int idp)
 		{
