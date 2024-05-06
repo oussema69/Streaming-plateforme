@@ -21,6 +21,14 @@ namespace back_wachify.Dto
         public string Password { get; set; } = string.Empty;
         [Required(ErrorMessage = "Role is required")]
         public Role Role { get; set; }
+
+        [Required(ErrorMessage = "Firstname is required")]
+
+        public string Name { get; set; }
+        [Required(ErrorMessage = "phoneNumber is required")]
+
+        public string PhoneNumber { get; set; }
+  
         public Etat Etat { get; set; }
 
 

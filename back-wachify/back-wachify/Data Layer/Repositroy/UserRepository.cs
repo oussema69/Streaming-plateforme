@@ -3,10 +3,12 @@ using back_wachify.Business_Logic_Layer.Model;
 using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
+using back_wachify.Migrations;
 using back_wachify.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace back_wachify.Data_Layer.Repositroy
 {
@@ -53,6 +55,7 @@ namespace back_wachify.Data_Layer.Repositroy
 
         }
 
+
         public async Task<User> GetUserByRefreshTokenAsync(string refreshToken)
         {
             return await _dbContext.User.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
@@ -88,7 +91,19 @@ namespace back_wachify.Data_Layer.Repositroy
 
             return false;
         }
+        public async Task<bool> ConfirmedEmail(string username)
+        {
+            var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Username == username);
 
+            if (user != null)
+            {
+                user.IsEmailConfirmed = true;
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
         public async Task<User> UpdateAsync(int id, UserDto userDto)
         {
             var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Id == id);

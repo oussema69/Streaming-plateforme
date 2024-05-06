@@ -12,6 +12,8 @@ using back_wachify.Data;
 using back_wachify.Business_Logic_Layer.Interfaces;
 using back_wachify.Business_Logic_Layer.Services;
 using back_wachify.Data_Layer.Repositroy;
+using AutoMapper;
+using back_wachify.Data_Layer;
 
 namespace back_wachify
 {
@@ -76,7 +78,19 @@ namespace back_wachify
                    ValidateAudience = false
                };
            });
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin()
+                                             .AllowAnyHeader()
+                                             .AllowAnyMethod();
+                                  });
+            });
             // Add authorization policies
             builder.Services.AddAuthorization(options =>
             {
@@ -86,8 +100,18 @@ namespace back_wachify
                     policy.RequireAuthenticatedUser();
                 });
             });
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            builder.Services.AddSingleton(mapper);
+            builder.Services.AddMvc();
 
             var app = builder.Build();
+            app.UseCors(MyAllowSpecificOrigins);
+
 
 
             app.UseCors(builder =>

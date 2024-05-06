@@ -24,7 +24,7 @@ namespace back_wachify.Controllers
         private readonly IUserService _userService;
         private readonly IAuthService _authService;
 
-        private readonly ApplicationDbContext _dbContext; 
+        private readonly ApplicationDbContext _dbContext;
 
 
         public AuthController(IConfiguration configuration, IUserService userService, IAuthService authService, ApplicationDbContext dbContext)
@@ -59,15 +59,32 @@ namespace back_wachify.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "An error occurred while registering the user.the error is:"+ex);
+                return StatusCode(500, "An error occurred while registering the user.the error is:" + ex);
             }
         }
-    
+        [HttpPost("registerSocial")]
+        public async Task<ActionResult<User>> RegisterSocial(SocialregisterDto request)
+        {
+            try
+            {
+                var registeredUser = await _authService.RegisterUserSocial(request);
+                return Ok(registeredUser);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while registering the user.the error is:" + ex);
+            }
+        }
 
-    [HttpPost("login")]
+
+        [HttpPost("login")]
         public async Task<ActionResult<string>> Login(AuthDto request)
         {
-            var (token, isPasswordWrong) = await _authService.login(request);
+            var (token, isPasswordWrong,role) = await _authService.login(request);
 
             if (token == null)
             {
@@ -82,8 +99,29 @@ namespace back_wachify.Controllers
             }
 
             // Return JWT token
-            return Ok(token);
+            return Ok(new { token, role });
         }
+        [HttpPost("loginSocial")]
+        public async Task<ActionResult<string>> LoginSocial(SocialAuthDto request)
+        {
+            var (token, IsSocialNotLogged) = await _authService.loginSocial(request);
+
+            if (token == null)
+            {
+                if (IsSocialNotLogged)
+                {
+                    return BadRequest("you must loggedIn from facebook first");
+                }
+                else
+                {
+                    return BadRequest("User not found.");
+                }
+            }
+
+            // Return JWT token
+            return Ok(new { token });
+        }
+
 
         [HttpPost("refresh-token")]
         public async Task<ActionResult<string>> RefreshToken()
@@ -93,7 +131,7 @@ namespace back_wachify.Controllers
 
             if (token == null)
             {
-                return Unauthorized(message); 
+                return Unauthorized(message);
             }
 
             return Ok(token);

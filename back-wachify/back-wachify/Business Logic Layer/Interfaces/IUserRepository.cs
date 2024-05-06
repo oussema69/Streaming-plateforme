@@ -25,7 +25,7 @@ namespace back_wachify.Data_Layer.Repositroy
 
         Task<int?> GetSecretCodeByEmailAsync(string email);
 
-
+        Task<bool> ConfirmedEmail(string username);
 
 
 

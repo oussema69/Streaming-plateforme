@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace back_wachify.Services.UserService
 {
@@ -17,6 +18,7 @@ namespace back_wachify.Services.UserService
         private readonly IUserRepository _userRepository;
         //private readonly IEmailService _emailService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IMapper _mapper;
 
         public UserService(IHttpContextAccessor httpContextAccessor, IUserRepository userRepository)
         {
@@ -126,8 +128,18 @@ namespace back_wachify.Services.UserService
 
             try
             {
-                await _userRepository.AffecterCode(recipient, codeAleatoire);
-                await EnvoyerEmailAsync(emailDto, recipient, codeAleatoire); // Appel de la méthode d'envoi d'e-mail locale
+                bool codeAssigned = await _userRepository.AffecterCode(recipient, codeAleatoire);
+
+
+                if (codeAssigned)
+                {
+                    // If the code was successfully assigned, proceed to send the email
+                    await EnvoyerEmailAsync(emailDto, recipient, codeAleatoire); // Call the local email sending method
+                }
+                else
+                {
+                    throw new Exception();
+                }
 
             }
             catch (Exception ex)
@@ -184,7 +196,10 @@ namespace back_wachify.Services.UserService
 
                 if (secretCode.HasValue && secretCode == codeVerification)
                 {
+                    await _userRepository.ConfirmedEmail(email);
+
                     return true;
+
                 }
                 else
                 {

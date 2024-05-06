@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+import { JwtDecoderService } from 'src/app/service/jwt-decoder.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { User } from 'src/app/Models/User';
@@ -9,19 +11,27 @@ import { AdminService } from 'src/app/Services/admin.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-    
-  public canvas : any;
-  public ctx :any;
-  public chartColor: any;
-  public chartEmail :any;
-  public chartHours : any;
+export class HomeComponent {
+  constructor(private cookieService: CookieService,private jwtdecode:JwtDecoderService,private adminserv:AdminService) { }
+
 
   allUsers:User[]=[];
 
-  constructor(private adminserv:AdminService){}
 
   ngOnInit(){
+       // Your initialization logic here
+
+    // Check if token and role are saved in cookies
+    const token = this.cookieService.get('token');
+    const role = this.cookieService.get('role');
+
+    if (token && role) {
+      console.log('Token and role are saved in cookies:', token, role);
+      console.log(this.jwtdecode.decodeToken1(token))
+
+    } else {
+      console.log('Token and role are not saved in cookies');
+    }
     console.log("la liste est ",this.getAll());
   }
   getAll(){

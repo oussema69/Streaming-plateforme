@@ -138,13 +138,20 @@ namespace back_wachify.Migrations
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
                         .IsRequired()
@@ -162,6 +169,15 @@ namespace back_wachify.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("facebookId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("googleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("provider")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("secretCode")
                         .HasColumnType("int");

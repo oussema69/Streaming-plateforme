@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -6,13 +7,14 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
+
   @ViewChild('dataMenuOpenBtn') dataMenuOpenBtn!: ElementRef;
   @ViewChild('dataMenuCloseBtn') dataMenuCloseBtn!: ElementRef;
   @ViewChild('dataNavbar') dataNavbar!: ElementRef;
   @ViewChild('dataOverlay') dataOverlay!: ElementRef;
   @ViewChild('dataHeader') dataHeader!: ElementRef;
   @ViewChild('dataGoTop') dataGoTop!: ElementRef;
-
+  constructor(public router:Router){}
   toggleNavbar() {
     this.dataNavbar.nativeElement.classList.toggle("active");
     this.dataOverlay.nativeElement.classList.toggle("active");
@@ -35,4 +37,6 @@ export class WelcomeComponent {
     this.dataOverlay.nativeElement.classList.remove("active");
     document.body.classList.remove("active");
   }
+  goSignIn() {
+this.router.navigate(['accounts']);    }
 }
