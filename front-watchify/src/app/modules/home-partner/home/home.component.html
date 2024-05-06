@@ -1,0 +1,33 @@
+<app-navbarpart></app-navbarpart>
+<div class="container">
+
+<div class="films">
+  <h1>List des Films</h1>
+<div class="row">
+  <div class="col-4" *ngFor="let item of objfilm">
+    <div class="wrapper" >
+
+      <div class="card">
+
+          <img src="../../../../assets/images/movie-1.png">
+          <div class="descriptions">
+              <h1>{{item.titre}}</h1>
+              <p>
+                {{item.description}}
+              </p>
+              <button type="submit" routerLink="/partner/detaillFilm/{{item.id}}">
+                Detaille Film
+              </button>
+          </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+</div>
+</div>
+</div>

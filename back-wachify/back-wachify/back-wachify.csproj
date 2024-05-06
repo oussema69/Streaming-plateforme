@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Business Logic Layer\Services\UserService\**" />
+    <Content Remove="Business Logic Layer\Services\UserService\**" />
+    <EmbeddedResource Remove="Business Logic Layer\Services\UserService\**" />
+    <None Remove="Business Logic Layer\Services\UserService\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.25" />
@@ -25,11 +32,5 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.1.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Business Logic Layer\Services\UserService\" />
-    <Folder Include="UploadedVideos\" />
-
-  </ItemGroup>
-
+	
 </Project>

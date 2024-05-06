@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using back_wachify.Migrations;
 using Microsoft.AspNetCore.Authorization;
 using back_wachify.Data;
+using back_wachify.Business_Logic_Layer.Interfaces;
 
 namespace back_wachify.Controllers
 {
@@ -13,16 +13,30 @@ namespace back_wachify.Controllers
 	[Route("api/[controller]")]
 	public class UploadvedioController : ControllerBase
 	{
-		private readonly string _uploadFolder = "UploadedVideos"; // Directory to store uploaded videos
+		
+		private readonly IFilmService _filmService;	
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		//private readonly string _uploadFolder = "UploadedVideos"; // Directory to store uploaded videos
 		//private readonly List<Film> _films = new List<Film>(); // Simulation des données en mémoire (vous devrez utiliser une base de données réelle)
-		private readonly ApplicationDbContext _db;
+		//private readonly ApplicationDbContext _db;
 		public UploadvedioController(ApplicationDbContext _db)
 		{
 			this._db = _db;
 		}
 
 		[HttpPost("upload")]
-        [Authorize("Bearer")] 
+        //[Authorize("Bearer")] 
 
         [RequestSizeLimit(2L * 1024 * 1024 * 1024)]
         public async Task<IActionResult> UploadVideo(IFormFile videoFile)
@@ -89,6 +103,6 @@ namespace back_wachify.Controllers
 
 			// Retourne le contenu de la vidéo avec le type de contenu approprié
 			return File(videoBytes, "video/mp4"); // Vous pouvez ajuster le type de contenu selon le format de votre vidéo
-		}
+		}*/
 	}
 }
