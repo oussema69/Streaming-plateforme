@@ -1,4 +1,5 @@
-﻿using back_wachify.Data.Model;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Data.Model;
 using System.ComponentModel.DataAnnotations;
 
 namespace back_wachify.Business_Logic_Layer.Dto
@@ -22,6 +23,7 @@ namespace back_wachify.Business_Logic_Layer.Dto
         public string? facebookId { get; set; }
         public string? googleId { get; set; }
         public string? provider { get; set; }
+        public Etat Etat { get; set; } = 0;
 
     }
 }

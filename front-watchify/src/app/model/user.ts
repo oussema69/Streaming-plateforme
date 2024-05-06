@@ -9,4 +9,6 @@ export  class User{
   isEmailConfirmed: boolean;
   confirmationCode: string;
   role: number;
+  secretCode:number;
+  etat:any;
 }

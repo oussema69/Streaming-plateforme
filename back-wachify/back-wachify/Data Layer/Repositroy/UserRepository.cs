@@ -91,7 +91,19 @@ namespace back_wachify.Data_Layer.Repositroy
 
             return false;
         }
+        public async Task<bool> ConfirmedEmail(string username)
+        {
+            var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Username == username);
 
+            if (user != null)
+            {
+                user.IsEmailConfirmed = true;
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
         public async Task<User> UpdateAsync(int id, UserDto userDto)
         {
             var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Id == id);

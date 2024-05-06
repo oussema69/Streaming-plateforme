@@ -196,7 +196,10 @@ namespace back_wachify.Services.UserService
 
                 if (secretCode.HasValue && secretCode == codeVerification)
                 {
+                    await _userRepository.ConfirmedEmail(email);
+
                     return true;
+
                 }
                 else
                 {

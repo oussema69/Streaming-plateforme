@@ -51,8 +51,9 @@
 
               <!-- Email input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" name="username" formControlName="username" [ngClass]="{'is-invalid': form.get('username').invalid && form.get('username').touched, 'is-valid': form.get('username').valid && form.get('username').touched}" />
                 <label class="form-label" for="form3Example3">Email address</label>
+
+                <input type="email" id="form3Example3" class="form-control" name="username" formControlName="username" [ngClass]="{'is-invalid': form.get('username').invalid && form.get('username').touched, 'is-valid': form.get('username').valid && form.get('username').touched}" />
               </div>
 
   <div class="alert alert-danger" *ngIf="form.get('username').invalid && form.get('username').touched">
@@ -63,8 +64,9 @@
   </div>
               <!-- Password input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" name="password" formControlName="password" [ngClass]="{'is-invalid': form.get('password').invalid && form.get('password').touched, 'is-valid': form.get('password').valid && form.get('password').touched}"/>
                 <label class="form-label" for="form3Example4">Password</label>
+
+                <input type="password" id="form3Example4" class="form-control" name="password" formControlName="password" [ngClass]="{'is-invalid': form.get('password').invalid && form.get('password').touched, 'is-valid': form.get('password').valid && form.get('password').touched}"/>
               </div>
               <div class="alert alert-danger" *ngIf="form.get('password').invalid && form.get('password').touched">
                 <p *ngIf="form.get('password').hasError('required') && form.get('password').touched" style="color: white;">            Password is required
@@ -78,17 +80,22 @@
 
               <!-- Submit button -->
               <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 mx-auto" style="margin: 0 auto; display: block;">
-                Sign up
+                Sign in
             </button>
+            <div class="inlinLinks">
+              <a  data-mdb-button-init data-mdb-ripple-init class="link-primary mb-4 mx-auto"  >forget password</a>
+              <a  routerLink="register" data-mdb-button-init data-mdb-ripple-init class="link-primary mb-4 mx-auto"  >Don't have an account? signup</a>
+
+            </div>
 
 
               <!-- Register buttons -->
               <div class="text-center">
-                <p>or sign up with:</p>
+                <p>or sign in with:</p>
                 <button type="button" (click)="signInWithFB()"  data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1 btn-lg">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </button>
-                <button type="button" (click)="signInWithFB()"  data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1 btn-lg">
+                <button type="button"   data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1 btn-lg">
                   <ion-icon name="mail-unread-outline"></ion-icon>
                 </button>
 
@@ -103,7 +110,6 @@
   </div>
 </section>
 
-<button *ngIf="!loggedIn" (click)="signInWithFB()" >Login With FB</button>
 
 <div *ngIf="loggedIn">
 <img src="{{ user.response.picture.data.url }}">

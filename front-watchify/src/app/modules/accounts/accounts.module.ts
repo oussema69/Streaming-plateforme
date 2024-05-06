@@ -6,11 +6,16 @@ import { SigninComponent } from './signin/signin.component';
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { RegisterComponent } from './register/register.component';
+import { EmailValidationComponent } from './email-validation/email-validation.component';
 
 
 @NgModule({
   declarations: [
-    SigninComponent
+    SigninComponent,
+    RegisterComponent,
+    EmailValidationComponent,
+
   ],
   imports: [
     CommonModule,

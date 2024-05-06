@@ -38,5 +38,5 @@ export class WelcomeComponent {
     document.body.classList.remove("active");
   }
   goSignIn() {
-this.router.navigate(['signin']);    }
+this.router.navigate(['accounts']);    }
 }
