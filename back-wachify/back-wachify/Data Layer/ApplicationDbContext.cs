@@ -12,7 +12,7 @@ namespace back_wachify.Data
         }
 
         public DbSet<Film> Film { get; set; }
-
+        public DbSet<Commantire> Commantire { get; set; }
         public DbSet<Pack> Pack { get; set; }
         public DbSet<Abonnement> Abonnements { get; set; }
 

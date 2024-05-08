@@ -45,13 +45,15 @@ namespace back_wachify
             builder.Services.AddScoped<ISaisonRepository, SaisonRepository>();
 
             builder.Services.AddScoped<ISaisonService, SaisonService>();
+			builder.Services.AddScoped<ICommantireRepo, CommantireRepo>();
+			builder.Services.AddScoped<ICommantireService, CommantireService>();
 
 
 
 
 
 
-            builder.Services.AddHttpContextAccessor();
+			builder.Services.AddHttpContextAccessor();
 
 
             builder.Services.AddSwaggerGen(options =>

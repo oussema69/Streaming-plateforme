@@ -27,7 +27,7 @@ export class ServicePartenaireService {
 
   }
   getLogoFile(id: string) {
-    return this.http.get(`${this.url}/logo/${id}`, { responseType: 'blob' });
+    return this.http.get(`${this.url}logo/${id}`);
   }
   AjouterFilm(film:FormData)
   {

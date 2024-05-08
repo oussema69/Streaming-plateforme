@@ -7,6 +7,7 @@ import { NavbarpartComponent } from './navbarpart/navbarpart.component';
 import { AddfilmComponent } from './addfilm/addfilm.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetaillFilmComponent } from './detaill-film/detaill-film.component';
+import { UpdatefilmComponent } from './updatefilm/updatefilm.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DetaillFilmComponent } from './detaill-film/detaill-film.component';
     HomeComponent,
     NavbarpartComponent,
     AddfilmComponent,
-    DetaillFilmComponent
+    DetaillFilmComponent,
+    UpdatefilmComponent
   ],
   imports: [
     CommonModule,
