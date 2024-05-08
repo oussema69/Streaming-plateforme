@@ -9,14 +9,19 @@
 
       <div class="card">
 
-          <img src="../../../../assets/images/movie-1.png">
+          <img src="https://localhost:7178/api/Film/logo/{{item.
+            logoFilePath}}
+          ">
           <div class="descriptions">
               <h1>{{item.titre}}</h1>
               <p>
                 {{item.description}}
               </p>
-              <button type="submit" routerLink="/partner/detaillFilm/{{item.id}}">
+              <button type="submit" routerLink="/partner/detaillFilm/{{item.id}}" style="margin-right: 3%;">
                 Detaille Film
+              </button>
+              <button type="submit" routerLink="/partner/updatefilm/{{item.id}}">
+                Mise a joure Film
               </button>
           </div>
       </div>

@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240428154508_users")]
-    partial class users
+    [Migration("20240507153222_updateahmed")]
+    partial class updateahmed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,13 +83,34 @@ namespace back_wachify.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<DateTime>("DateDeSortie")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Duree")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsFree")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LogoFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("VideoFilePath")
                         .IsRequired()

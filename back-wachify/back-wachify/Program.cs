@@ -39,13 +39,15 @@ namespace back_wachify
             builder.Services.AddScoped<IAbonnementRepo, AbonnementRepo>();
             builder.Services.AddScoped<IFilmRepo,FilmRepo>();
             builder.Services.AddScoped<IFilmService, FilmService>();
+			builder.Services.AddScoped<ICommantireRepo, CommantireRepo>();
+			builder.Services.AddScoped<ICommantireService, CommantireService>();
 
 
 
 
 
 
-            builder.Services.AddHttpContextAccessor();
+			builder.Services.AddHttpContextAccessor();
 
 
             builder.Services.AddSwaggerGen(options =>
