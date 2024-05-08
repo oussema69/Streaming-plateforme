@@ -39,6 +39,12 @@ namespace back_wachify
             builder.Services.AddScoped<IAbonnementRepo, AbonnementRepo>();
             builder.Services.AddScoped<IFilmRepo,FilmRepo>();
             builder.Services.AddScoped<IFilmService, FilmService>();
+            builder.Services.AddScoped<ISerieRepository, SerieRepository>();
+            builder.Services.AddScoped<ISeriesService, SeriesService>();
+
+            builder.Services.AddScoped<ISaisonRepository, SaisonRepository>();
+
+            builder.Services.AddScoped<ISaisonService, SaisonService>();
 
 
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace back_wachify.Migrations
 {
-    public partial class user : Migration
+    public partial class film : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,9 +15,15 @@ namespace back_wachify.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Titre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Duree = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Genre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateDeSortie = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsFree = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     VideoFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    LogoFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,6 +42,22 @@ namespace back_wachify.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pack", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Series",
+                columns: table => new
+                {
+                    SeriesID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    realisateur = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Series", x => x.SeriesID);
                 });
 
             migrationBuilder.CreateTable(
@@ -67,6 +89,27 @@ namespace back_wachify.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Season",
+                columns: table => new
+                {
+                    SeasonID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SeasonNumber = table.Column<int>(type: "int", nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SeriesID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Season", x => x.SeasonID);
+                    table.ForeignKey(
+                        name: "FK_Season_Series_SeriesID",
+                        column: x => x.SeriesID,
+                        principalTable: "Series",
+                        principalColumn: "SeriesID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Abonnements",
                 columns: table => new
                 {
@@ -94,6 +137,30 @@ namespace back_wachify.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Episode",
+                columns: table => new
+                {
+                    EpisodeID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VideoFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EpisodeNumber = table.Column<int>(type: "int", nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SeasonID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Episode", x => x.EpisodeID);
+                    table.ForeignKey(
+                        name: "FK_Episode_Season_SeasonID",
+                        column: x => x.SeasonID,
+                        principalTable: "Season",
+                        principalColumn: "SeasonID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Abonnements_PackId",
                 table: "Abonnements",
@@ -103,6 +170,16 @@ namespace back_wachify.Migrations
                 name: "IX_Abonnements_UserId",
                 table: "Abonnements",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Episode_SeasonID",
+                table: "Episode",
+                column: "SeasonID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Season_SeriesID",
+                table: "Season",
+                column: "SeriesID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_User_Username",
@@ -117,6 +194,9 @@ namespace back_wachify.Migrations
                 name: "Abonnements");
 
             migrationBuilder.DropTable(
+                name: "Episode");
+
+            migrationBuilder.DropTable(
                 name: "Film");
 
             migrationBuilder.DropTable(
@@ -124,6 +204,12 @@ namespace back_wachify.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Season");
+
+            migrationBuilder.DropTable(
+                name: "Series");
         }
     }
 }

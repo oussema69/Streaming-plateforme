@@ -12,13 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-<<<<<<<< HEAD:back-wachify/back-wachify/Migrations/20240429132109_updatemigration.Designer.cs
-    [Migration("20240429132109_updatemigration")]
-    partial class updatemigration
-========
-    [Migration("20240428154837_user")]
-    partial class user
->>>>>>>> cc2c068388972f0eebcf24d4f712c629f83eef88:back-wachify/back-wachify/Migrations/20240428154837_user.Designer.cs
+    [Migration("20240508154940_film")]
+    partial class film
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,6 +54,42 @@ namespace back_wachify.Migrations
                     b.ToTable("Abonnements");
                 });
 
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Episode", b =>
+                {
+                    b.Property<int>("EpisodeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EpisodeID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EpisodeNumber")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SeasonID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EpisodeID");
+
+                    b.HasIndex("SeasonID");
+
+                    b.ToTable("Episode");
+                });
+
             modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
                 {
                     b.Property<int>("Id")
@@ -78,6 +109,58 @@ namespace back_wachify.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pack");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Season", b =>
+                {
+                    b.Property<int>("SeasonID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SeasonID"), 1L, 1);
+
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SeasonNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SeriesID")
+                        .HasColumnType("int");
+
+                    b.HasKey("SeasonID");
+
+                    b.HasIndex("SeriesID");
+
+                    b.ToTable("Season");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Series", b =>
+                {
+                    b.Property<int>("SeriesID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SeriesID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("realisateur")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SeriesID");
+
+                    b.ToTable("Series");
                 });
 
             modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
@@ -214,6 +297,38 @@ namespace back_wachify.Migrations
                     b.Navigation("Pack");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Episode", b =>
+                {
+                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Season", "Season")
+                        .WithMany("Episodes")
+                        .HasForeignKey("SeasonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Season");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Season", b =>
+                {
+                    b.HasOne("back_wachify.Business_Logic_Layer.Model.Series", "Series")
+                        .WithMany("Seasons")
+                        .HasForeignKey("SeriesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Series");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Season", b =>
+                {
+                    b.Navigation("Episodes");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Series", b =>
+                {
+                    b.Navigation("Seasons");
                 });
 #pragma warning restore 612, 618
         }

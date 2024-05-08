@@ -16,7 +16,10 @@ namespace back_wachify.Data
         public DbSet<Pack> Pack { get; set; }
         public DbSet<Abonnement> Abonnements { get; set; }
 
+        public DbSet<Series> Series { get; set; }
+        public DbSet<Season> Season { get; set; }
 
+        public DbSet<Episode> Episode { get; set; }
 
 
 
@@ -28,6 +31,10 @@ namespace back_wachify.Data
             modelBuilder.Entity<User>()
             .HasIndex(u => u.Username)
             .IsUnique();
+            modelBuilder.Entity<Series>()
+              .HasKey(u => u.SeriesID);
+            modelBuilder.Entity<Season>()
+            .HasKey(u => u.SeasonID);
         }
 
 
