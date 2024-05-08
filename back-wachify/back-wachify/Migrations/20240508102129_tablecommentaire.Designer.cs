@@ -12,13 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-<<<<<<<< HEAD:back-wachify/back-wachify/Migrations/20240429132109_updatemigration.Designer.cs
-    [Migration("20240429132109_updatemigration")]
-    partial class updatemigration
-========
-    [Migration("20240428154837_user")]
-    partial class user
->>>>>>>> cc2c068388972f0eebcf24d4f712c629f83eef88:back-wachify/back-wachify/Migrations/20240428154837_user.Designer.cs
+    [Migration("20240508102129_tablecommentaire")]
+    partial class tablecommentaire
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,6 +52,33 @@ namespace back_wachify.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Abonnements");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Commantire", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Contenu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdFilm")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUser")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdFilm");
+
+                    b.HasIndex("IdUser");
+
+                    b.ToTable("Commantire");
                 });
 
             modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Pack", b =>
@@ -212,6 +234,25 @@ namespace back_wachify.Migrations
                         .IsRequired();
 
                     b.Navigation("Pack");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Commantire", b =>
+                {
+                    b.HasOne("back_wachify.Data.Model.Film", "Film")
+                        .WithMany()
+                        .HasForeignKey("IdFilm")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("back_wachify.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Film");
 
                     b.Navigation("User");
                 });

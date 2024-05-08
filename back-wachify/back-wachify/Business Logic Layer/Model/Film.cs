@@ -1,4 +1,5 @@
-﻿using back_wachify.Model;
+﻿using back_wachify.Business_Logic_Layer.Model;
+using back_wachify.Model;
 using System.ComponentModel.DataAnnotations;
 
 namespace back_wachify.Data.Model
@@ -24,10 +25,11 @@ namespace back_wachify.Data.Model
 
 		public string  LogoFilePath { get; set; } // Utilisé pour stocker le chemin du fichier logo sur le serveur
 
+		public virtual ICollection<Commantire> Commentaires { get; set; }
 
 
-		
 
-	
-    }
+
+
+	}
 }

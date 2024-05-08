@@ -13,8 +13,8 @@ namespace back_wachify.Data_Layer.Repositroy
 {
 	public class FilmRepo : IFilmRepo
 	{
-		private readonly string _uploadFolder = "UploadedVideos"; // Directory to store uploaded videos
-		private readonly string _uploadLogo = "UploadedLogo"; // Directory to store uploaded videos
+		private readonly string _uploadFolder = "/UploadedVideos"; // Directory to store uploaded videos
+		private readonly string _uploadLogo = "/UploadedLogo"; // Directory to store uploaded videos
 
 
 		//private readonly List<Film> _films = new List<Film>(); // Simulation des données en mémoire (vous devrez utiliser une base de données réelle)
@@ -36,21 +36,24 @@ namespace back_wachify.Data_Layer.Repositroy
 				// Create directory if it doesn't exist
 				if (!Directory.Exists(_uploadFolder))
 				{
+					Console.WriteLine("dossier video");
 					Directory.CreateDirectory(_uploadFolder);   
 				}
 				// Create directory if it doesn't exist logo
 				if (!Directory.Exists(_uploadLogo))
 				{
+					Console.WriteLine("taswira");
+
 					Directory.CreateDirectory(_uploadLogo);
 				}
 
-				// Generate unique file name to prevent naming conflicts
 				var uniqueFileName = Guid.NewGuid().ToString() + "_" + videoFile.FileName;
 				var uniqueFileNamelogo = Guid.NewGuid().ToString() + "_" + logoFile.FileName;
 
 				// Combine the upload folder path with the unique file name
-				var filePath = Path.Combine(uniqueFileName);
-				var filePathlogo = Path.Combine(uniqueFileNamelogo);
+				var filePath = Path.Combine(_uploadFolder, uniqueFileName);
+				var filePathlogo = Path.Combine(_uploadLogo, uniqueFileNamelogo);
+
 
 				// Save the video file to the server
 				using (var fileStream = new FileStream(filePath, FileMode.Create))
@@ -61,16 +64,16 @@ namespace back_wachify.Data_Layer.Repositroy
 
 				using (var fileStreamlogo = new FileStream(filePathlogo, FileMode.Create))
 				{
-					await videoFile.CopyToAsync(fileStreamlogo);
+					await logoFile.CopyToAsync(fileStreamlogo);
 
 				}
 
 				var film = new Film
 				{
-					VideoFilePath = filePath, // Ajustez selon comment vous voulez enregistrer le chemin
+					VideoFilePath = uniqueFileName, // Ajustez selon comment vous voulez enregistrer le chemin
 					Titre = titre,
 					Description = description,
-					LogoFilePath = filePathlogo,
+					LogoFilePath = uniqueFileNamelogo,
 					DateDeSortie = DateDeSortie,
 					Duree = Duree,
 					Genre = Genre,

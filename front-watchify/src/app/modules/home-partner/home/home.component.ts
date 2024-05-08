@@ -36,12 +36,19 @@ export class HomeComponent implements OnInit  {
 
 
 
-
+this.getImage("602cbb55-1132-463e-af28-d95c47ed1969_use.png")
 
   }
 
 
-
+getImage(id:string){
+  this.servicefilm.getLogoFile(id).subscribe(res=>{
+    console.log("hhhh",res)
+  },error=>{
+    console.log('Erreur : ', error.url);
+    return error.url;
+  })
+}
 
 
 }

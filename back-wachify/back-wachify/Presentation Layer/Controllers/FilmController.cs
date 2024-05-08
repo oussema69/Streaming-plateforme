@@ -14,8 +14,8 @@ namespace back_wachify.Presentation_Layer.Controllers
 	public class FilmController : ControllerBase
 	{
 		private readonly IFilmService _filmService;
-		private readonly string _uploadFolder = "UploadedVideos"; // Directory to store uploaded videos
-		private readonly string _uploadLogo = "UploadedLogo"; // Directory to store uploaded videos
+		private readonly string _uploadFolder = "/UploadedVideos"; // Directory to store uploaded videos
+		private readonly string _uploadLogo = "/UploadedLogo"; // Directory to store uploaded videos
 
 		public FilmController(IFilmService filmService)
 		{
