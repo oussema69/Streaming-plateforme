@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240508102129_tablecommentaire")]
-    partial class tablecommentaire
+    [Migration("20240508170425_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,17 +66,17 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdFilm")
+                    b.Property<int>("FilmId")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUser")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdFilm");
+                    b.HasIndex("FilmId");
 
-                    b.HasIndex("IdUser");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Commantire");
                 });
@@ -241,20 +241,25 @@ namespace back_wachify.Migrations
             modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Commantire", b =>
                 {
                     b.HasOne("back_wachify.Data.Model.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("IdFilm")
+                        .WithMany("Commantires")
+                        .HasForeignKey("FilmId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("back_wachify.Model.User", "User")
                         .WithMany()
-                        .HasForeignKey("IdUser")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Film");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
+                {
+                    b.Navigation("Commantires");
                 });
 #pragma warning restore 612, 618
         }

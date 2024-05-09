@@ -64,17 +64,13 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("IdFilm")
                         .HasColumnType("int");
 
-                    b.Property<int>("filmid")
+                    b.Property<int>("IdUser")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("filmid");
 
                     b.ToTable("Commantire");
                 });
@@ -234,30 +230,6 @@ namespace back_wachify.Migrations
                     b.Navigation("Pack");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Commantire", b =>
-                {
-                    b.HasOne("back_wachify.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("back_wachify.Data.Model.Film", "Film")
-                        .WithMany("Commentaires")
-                        .HasForeignKey("filmid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
-                {
-                    b.Navigation("Commentaires");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240508110813_update")]
-    partial class update
+    [Migration("20240508172223_updateec")]
+    partial class updateec
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

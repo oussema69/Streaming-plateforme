@@ -3,7 +3,6 @@ using back_wachify.Business_Logic_Layer.Model;
 using back_wachify.Data;
 using back_wachify.Data.Model;
 using back_wachify.Dto;
-using back_wachify.Migrations;
 using back_wachify.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;

@@ -12,8 +12,8 @@ using back_wachify.Data;
 namespace back_wachify.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240508155405_updatecomantaire")]
-    partial class updatecomantaire
+    [Migration("20240508171822_updatee")]
+    partial class updatee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,17 +66,18 @@ namespace back_wachify.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("FilmId")
                         .HasColumnType("int");
 
-                    b.Property<int>("filmid")
+                    b.Property<int>("IdFilm")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUser")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("filmid");
+                    b.HasIndex("FilmId");
 
                     b.ToTable("Commantire");
                 });
@@ -240,26 +241,14 @@ namespace back_wachify.Migrations
 
             modelBuilder.Entity("back_wachify.Business_Logic_Layer.Model.Commantire", b =>
                 {
-                    b.HasOne("back_wachify.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("back_wachify.Data.Model.Film", "Film")
-                        .WithMany("Commentaires")
-                        .HasForeignKey("filmid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("User");
+                    b.HasOne("back_wachify.Data.Model.Film", null)
+                        .WithMany("Commantires")
+                        .HasForeignKey("FilmId");
                 });
 
             modelBuilder.Entity("back_wachify.Data.Model.Film", b =>
                 {
-                    b.Navigation("Commentaires");
+                    b.Navigation("Commantires");
                 });
 #pragma warning restore 612, 618
         }

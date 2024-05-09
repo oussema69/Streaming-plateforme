@@ -5,8 +5,9 @@
     <div class="movie-card" data-movie="Blade Runner">
       <div class="movie">
         <div class="movie__hero">
-          <img src="https://www.mensjournal.com/wp-content/uploads/2018/10/rambo-main-3.jpg?quality=86&strip=all"
-            alt="Rambo" class="movie__img">
+
+
+          <a href="https://localhost:7178/api/Film/video/{{objectfilm.videoFilePath}}">  <img src="https://localhost:7178/api/Film/logo/{{objectfilm.logoFilePath}}"class="movie__img"></a>
         </div>
         <div class="movie__content">
           <div class="movie__title">
@@ -37,33 +38,26 @@
     </div>
 
   </div>
+  <div class="row">
+    <h2 style="margin-left: 5%;">List commentaires</h2>
   <table class="table table-bordered" style="margin-left: 5%;">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">commentaire</th>
+
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let item of comantaire">
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{item.contenu}}</td>
+
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
     </tbody>
   </table>
+
+</div>
+
 </div>

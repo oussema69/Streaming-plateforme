@@ -25,7 +25,6 @@ namespace back_wachify.Data.Model
 
 		public string  LogoFilePath { get; set; } // Utilisé pour stocker le chemin du fichier logo sur le serveur
 
-		public virtual ICollection<Commantire> Commentaires { get; set; }
 
 
 

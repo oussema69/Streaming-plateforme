@@ -11,6 +11,7 @@ export class ServicePartenaireService {
   constructor(private http:HttpClient) { }
 
   private url="https://localhost:7178/api/Film/"
+  private urlcom="https://localhost:7178/api/Commantaire/"
 
 
   GetAllFilm(){
@@ -29,6 +30,10 @@ export class ServicePartenaireService {
   getLogoFile(id: string) {
     return this.http.get(`${this.url}logo/${id}`);
   }
+
+  getvedio(namevedio:string){
+   return this.http.get(this.url+"vedio/"+namevedio)
+  }
   AjouterFilm(film:FormData)
   {
     return this.http.post(this.url+"AddFilm",film)
@@ -37,6 +42,11 @@ export class ServicePartenaireService {
   GetFilmparId(id:number):Observable<Film>
   {
     return this.http.get<Film>(`${this.url}${id}`);
+  }
+
+
+  GetCommantairebaridfilm(id:number){
+    return this.http.get(this.urlcom+"film/"+id)
   }
 
 
